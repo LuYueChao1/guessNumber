@@ -5,12 +5,14 @@ public class Answer {
         int valuePositionCorrectCount=0;
         int onlyValueCorrectCount=0;
         for(int index=0;index<actualAnswer.length();index++){
-            if(actualAnswer.charAt(index)==inputAnswer.charAt(index)){
+            boolean isSamePositionSameValue=actualAnswer.charAt(index)==inputAnswer.charAt(index);
+            if(isSamePositionSameValue){
                 valuePositionCorrectCount++;
             }
         }
         for(int index=0;index<actualAnswer.length();index++){
-            if(inputAnswer.contains(String.valueOf(actualAnswer.charAt(index)))&&inputAnswer.indexOf(String.valueOf(actualAnswer.charAt(index)))!=index){
+            boolean isSameValueAndDiffPosition=inputAnswer.contains(String.valueOf(actualAnswer.charAt(index)))&&inputAnswer.indexOf(String.valueOf(actualAnswer.charAt(index)))!=index;
+            if(isSameValueAndDiffPosition){
                 onlyValueCorrectCount++;
             }
         }
