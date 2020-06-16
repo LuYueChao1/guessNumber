@@ -41,5 +41,10 @@ public class AnswerTest {
         String answerResult=answer.getAnswerResult("1358","3746");
         assertEquals("0A1B",answerResult);
     }
+    @Test
+    public void mainTest(){
+        Game game=new Game();
+        game.Main();
+    }
 
 }
