@@ -17,4 +17,17 @@ public class Game {
             inputCount++;
         }
     }
+    public boolean checkStrIsOk(String str){
+        if(str==null||str.isEmpty()||str.length()!=4){
+            return false;
+        }
+        char[] elements=str.toCharArray();
+        for(char e:elements){
+            if(str.indexOf(e)!=str.lastIndexOf(e)||!Character.isDigit(e)){
+                return false;
+            }
+        }
+        return true;
+    }
+   
 }
