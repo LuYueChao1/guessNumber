@@ -9,6 +9,11 @@ public class Answer {
                 valuePositionCorrectCount++;
             }
         }
+        for(int index=0;index<actualAnswer.length();index++){
+            if(inputAnswer.contains(String.valueOf(actualAnswer.charAt(index)))&&inputAnswer.indexOf(String.valueOf(actualAnswer.charAt(index)))!=index){
+                onlyValueCorrectCount++;
+            }
+        }
         return valuePositionCorrectCount+"A"+onlyValueCorrectCount+"B";
     }
 }
