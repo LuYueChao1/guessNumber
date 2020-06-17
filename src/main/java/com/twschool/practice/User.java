@@ -16,6 +16,9 @@ public class User {
                 this.winTimes++;
                 this.userMars=this.userMars+3;
             }
+            if (game.getGameStatus()==GameStatus.FAILED){
+                this.userMars=this.userMars-3;
+            }
         }
     }
     public int getUserMars(){
