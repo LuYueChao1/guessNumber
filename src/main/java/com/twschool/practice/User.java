@@ -12,8 +12,8 @@ public class User {
     public void playGame(String inputNumber,Game game){
         if(game.getGameStatus()==GameStatus.CONTINUED){
             game.guess(inputNumber);
+            System.out.println(game.getGameStatus()+""+winTimes);
             this.countMars(game);
-
         }
     }
     public int getUserMars(){
@@ -31,6 +31,7 @@ public class User {
             }
         }
         if (game.getGameStatus()==GameStatus.FAILED){
+            this.winTimes=0;
             this.userMarks=this.userMarks-3;
         }
 

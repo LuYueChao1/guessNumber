@@ -111,4 +111,58 @@ public class UserTest {
         }
         assertEquals(75,user.getUserMars());
     }
+
+    @Test
+    public void should_return_marks_9_given_when_user_win_lost_win_win_lost_win_win(){
+        User user=new User("001");
+        Answer answer=new Answer();
+
+        GeneratorExtent generatorExtent0123=new GeneratorExtent(answer);
+        generatorExtent0123.setGeneratorAnswer("0123");
+        Game game0123=new Game(generatorExtent0123);
+        user.playGame("0123",game0123);
+
+        GeneratorExtent generatorExtent1234=new GeneratorExtent(answer);
+        generatorExtent1234.setGeneratorAnswer("1234");
+        Game game1234=new Game(generatorExtent1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+        user.playGame("6789",game1234);
+
+        GeneratorExtent generatorExtent2345=new GeneratorExtent(answer);
+        generatorExtent2345.setGeneratorAnswer("2345");
+        Game game2345=new Game(generatorExtent2345);
+        user.playGame("2345",game2345);
+
+        GeneratorExtent generatorExtent3456=new GeneratorExtent(answer);
+        generatorExtent3456.setGeneratorAnswer("3456");
+        Game game3456=new Game(generatorExtent3456);
+        user.playGame("3456",game3456);
+
+        GeneratorExtent generatorExtent4567=new GeneratorExtent(answer);
+        generatorExtent4567.setGeneratorAnswer("4567");
+        Game game4567=new Game(generatorExtent4567);
+        user.playGame("9876",game4567);
+        user.playGame("9876",game4567);
+        user.playGame("9876",game4567);
+        user.playGame("9876",game4567);
+        user.playGame("9876",game4567);
+        user.playGame("9876",game4567);
+
+        GeneratorExtent generatorExtent5678=new GeneratorExtent(answer);
+        generatorExtent5678.setGeneratorAnswer("5678");
+        Game game5678=new Game(generatorExtent5678);
+        user.playGame("5678",game5678);
+
+        GeneratorExtent generatorExtent6789=new GeneratorExtent(answer);
+        generatorExtent6789.setGeneratorAnswer("6789");
+        Game game6789=new Game(generatorExtent6789);
+        user.playGame("6789",game6789);
+
+        assertEquals(9,user.getUserMars());
+    }
 }
