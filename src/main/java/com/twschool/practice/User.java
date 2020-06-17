@@ -10,6 +10,13 @@ public class User {
     }
 
     public void playGame(String inputNumber,Game game){
+        if(game.getGameStatus()==GameStatus.CONTINUED){
+            game.guess(inputNumber);
+            if(game.getGameStatus()==GameStatus.SUCCEED){
+                this.winTimes++;
+                this.userMars=this.userMars+3;
+            }
+        }
     }
     public int getUserMars(){
         return this.userMars;

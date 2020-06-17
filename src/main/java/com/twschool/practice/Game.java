@@ -15,6 +15,7 @@ public class Game {
         Answer answer=new Answer();
         String guessResult=answer.getAnswerResult(actualAnswer,inputAnswer);
         avaiableTimes--;
+        this.modifyStatus(guessResult);
     }
     public void modifyStatus(String result){
         boolean isNotimes=avaiableTimes==0;
