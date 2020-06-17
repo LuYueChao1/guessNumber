@@ -12,20 +12,25 @@ public class User {
     public void playGame(String inputNumber,Game game){
         if(game.getGameStatus()==GameStatus.CONTINUED){
             game.guess(inputNumber);
-            if(game.getGameStatus()==GameStatus.SUCCEED){
-                this.winTimes++;
-                this.userMars=this.userMars+3;
-                if(this.winTimes>0&&winTimes%3==0){
-                    this.userMars=this.userMars+3;
-                }
-            }
-            if (game.getGameStatus()==GameStatus.FAILED){
-                this.userMars=this.userMars-3;
-            }
+            this.countMars(game);
+
         }
     }
     public int getUserMars(){
         return this.userMars;
+    }
+    private void countMars(Game game){
+        if(game.getGameStatus()==GameStatus.SUCCEED){
+            this.winTimes++;
+            this.userMars=this.userMars+3;
+            if(this.winTimes>0&&winTimes%3==0){
+                this.userMars=this.userMars+3;
+            }
+        }
+        if (game.getGameStatus()==GameStatus.FAILED){
+            this.userMars=this.userMars-3;
+        }
+
     }
 
 
