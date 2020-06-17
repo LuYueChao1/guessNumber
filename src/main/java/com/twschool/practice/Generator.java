@@ -1,7 +1,7 @@
 package com.twschool.practice;
 
 public class Generator {
-    private String generateAnswer;
+    protected String generateAnswer;
     public Generator( Answer answer){
         String randomAnswer=String.valueOf((int)((Math.random()*9+1)*1000));
         while (!answer.checkStrIsOk(randomAnswer)){
