@@ -12,14 +12,17 @@ public class Game {
         this.actualAnswer=generator.getGeneratorAnswer();
     }
     public void guess(String inputAnswer){
-        Answer answer=new Answer();
-        String guessResult=answer.getAnswerResult(actualAnswer,inputAnswer);
-        avaiableTimes--;
-        this.modifyStatus(guessResult);
+        if(this.gameStatus.equals(GameStatus.CONTINUED)){
+            Answer answer=new Answer();
+            String guessResult=answer.getAnswerResult(actualAnswer,inputAnswer);
+            avaiableTimes--;
+            this.modifyStatus(guessResult);
+        }
+
     }
     public void modifyStatus(String result){
-        boolean isNotimes=avaiableTimes==0;
-        if(isNotimes){
+        boolean isNoTimes=avaiableTimes==0;
+        if(isNoTimes){
             gameStatus=GameStatus.FAILED;
         }
         if(result.equals("4A0B")){

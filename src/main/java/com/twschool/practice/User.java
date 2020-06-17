@@ -2,7 +2,7 @@ package com.twschool.practice;
 
 public class User {
     private String userNumber;
-    private int userMars=0;
+    private int userMarks=0;
     private int winTimes=0;
 
     public User(String userNumber){
@@ -17,18 +17,21 @@ public class User {
         }
     }
     public int getUserMars(){
-        return this.userMars;
+        return this.userMarks;
     }
     private void countMars(Game game){
         if(game.getGameStatus()==GameStatus.SUCCEED){
             this.winTimes++;
-            this.userMars=this.userMars+3;
+            this.userMarks=this.userMarks+3;
             if(this.winTimes>0&&winTimes%3==0){
-                this.userMars=this.userMars+3;
+                this.userMarks=this.userMarks+3;
+            }
+            if(this.winTimes>0&&winTimes%5==0){
+                this.userMarks=this.userMarks+5;
             }
         }
         if (game.getGameStatus()==GameStatus.FAILED){
-            this.userMars=this.userMars-3;
+            this.userMarks=this.userMarks-3;
         }
 
     }
