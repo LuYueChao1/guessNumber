@@ -98,4 +98,17 @@ public class UserTest {
 
         assertEquals(23,user.getUserMars());
     }
+
+    @Test
+    public void should_return_marks_75_given_when_user_win_15_times(){
+        User user=new User("001");
+        Answer answer=new Answer();
+        for(int count=0;count<15;count++){
+            GeneratorExtent generatorExtent=new GeneratorExtent(answer);
+            String inputNumber=generatorExtent.getGeneratorAnswer();
+            Game game=new Game(generatorExtent);
+            user.playGame(inputNumber,game);
+        }
+        assertEquals(75,user.getUserMars());
+    }
 }
